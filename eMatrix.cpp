@@ -16,7 +16,21 @@
 
 #include "eMatrix.h"
 
-eMatrix::eMatrix() // The generic constructer for an eMatrix.
+eMatrix::eMatrix()
+/**
+Description
+--------
+The generic constructer for an eMatrix. Creates an eMatrix and prompts the user for in
+
+Input
+----
+None
+
+Output
+----
+None
+
+*/
 {
    std::cout << "Insert the x size: "; // Prompts the user for the x dimension of the matrix.
    int xSize; // Stores the x size.
@@ -38,7 +52,23 @@ eMatrix::eMatrix() // The generic constructer for an eMatrix.
    }
 }
 
-eMatrix::eMatrix(const int& seed, const int& xSize, const int& ySize) // Allows the user to generate a matrix of specified size from a specified seed.
+eMatrix::eMatrix(const int& seed, const int& xSize, const int& ySize)
+/**
+Description
+--------
+Allows the user to generate a matrix of specified size from a specified seed.
+
+Input
+----
+const int& seed -- The seed value used to generate random numbers.
+const int& xSize -- The number of columns in the matrix.
+const int& ySize -- The number of rows in the matrix.
+
+Output
+----
+None
+
+*/
 {
    srand(seed); // Seeds the random number generator with seed.
    for (int yIndex = 0; yIndex < ySize; yIndex++) // Loops through the number of rows.
@@ -53,6 +83,21 @@ eMatrix::eMatrix(const int& seed, const int& xSize, const int& ySize) // Allows 
 }
 
 eMatrix::eMatrix(const int& xSize, const int& ySize)
+/**
+Description
+--------
+Allows the user to generate a matrix of specified size and uses the time as the seed value.
+
+Input
+----
+const int& xSize -- The number of columns in the matrix.
+const int& ySize -- The number of rows in the matrix.
+
+Output
+----
+None
+
+*/
 {
    srand(time(0)); // Seeds the random number generator with size.
    for (int yIndex = 0; yIndex < ySize; yIndex++) // Loops through the number of rows.
@@ -68,7 +113,22 @@ eMatrix::eMatrix(const int& xSize, const int& ySize)
 
 const std::string keyString = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+[]{}|;:<>\?,./\n";
 // Used to turn chars into ints and ints into chars.
-const std::string eMatrix::encrypt(std::string text) // Encrypts a string and returns the encrypted text.
+
+const std::string eMatrix::encrypt(std::string text)
+/**
+Description
+--------
+Encrypts a string and returns the encrypted text.
+
+Input
+----
+std::string text -- The text that is being encrypted.
+
+Output
+----
+std::string -- The encrypted text.
+
+*/
 {
    std::vector<std::vector<int>> asciiVectors; // Stores a list of vectors of length ySize that corispond to chars in the text.
    std::vector<int> holder; // Holds a new vector that will go into asciiVectors.
@@ -106,7 +166,21 @@ const std::string eMatrix::encrypt(std::string text) // Encrypts a string and re
 }
 
 const std::map<std::vector<int>, std::vector<int>> eMatrix::constuctHashTable()
-{ // Creates a map that returns the input for every given output of matrix multiplication with the eMatrix.
+/**
+Description
+--------
+Creates a map that returns the input for every given output of matrix multiplication with the eMatrix.
+
+Input
+----
+None
+
+Output
+----
+std::map<std::vector<int>, std::vector<int>> -- A map for all possible output values.
+
+*/
+{
    std::cout << "Constructing Hash Table\nThis may take a minute\n"; // Informs the user that this process may take some time.
    int mod = getMod(); // Storest the mod of the matrix.
    size_t size = ySize(); // Stores the y size of the matrix.
@@ -132,7 +206,21 @@ const std::map<std::vector<int>, std::vector<int>> eMatrix::constuctHashTable()
    return hashTable; // Returns the map.
 }
 
-const std::string eMatrix::decrypt(std::string text) // Decodes text with this eMatrix.
+const std::string eMatrix::decrypt(std::string text)
+/**
+Description
+--------
+Decodes text that was encoded with this eMatrix.
+
+Input
+----
+std::string text -- The text that is being decrypted.
+
+Output
+----
+std::string -- The decrypted text.
+
+*/
 {
    std::map<std::vector<int>, std::vector<int>> hashTable = constuctHashTable(); // Constructs a map that will give us the input vectors based on the output vectors used when encoding the text.
    std::vector<std::vector<int>> asciiVectors; // Will store the text converted to a list of int vectors.
