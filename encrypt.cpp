@@ -15,21 +15,21 @@
 
 int main()
 {
-   std::cout << "Insert encryption key dimensions: ";
-   int xSize;
-   int ySize;
-   std::cin >> xSize;
-   std::cin >> ySize;
-   eMatrix m(xSize, ySize);
-   std::cout << std::endl << "your encryption key is:" << std::endl;
-   m.print();
-   std::cout << std::endl << "File to encrypt: ";
-   std::string filepath;
-   std::cin >> filepath;
-   std::string text = readFile(filepath);
-   std::string encryptedText = m.encrypt(text);
-   std::cout << "Encrypting file..." << std::endl;
-   clearFile(filepath);
-   writeFile(filepath, encryptedText);
-   std::cout << "Successful!" << std::endl;
+   std::cout << "Insert encryption key dimensions: "; // Prompts the user to input the dimensions of an encryption matrix.
+   int xSize; // Stores the x size of the matrix.
+   int ySize; // Stores the y size of the matrix.
+   std::cin >> xSize; // Reads in the x size of the matrix.
+   std::cin >> ySize; // Reads in the y size of the matrix.
+   eMatrix m(xSize, ySize); // Generates a random encryption matrix of the specified size.
+   std::cout << "your encryption key is:" << std::endl; // Informs the user that it is printing the encryption matrix.
+   m.print(); // Prints the encryption matrix.
+   std::cout << std::endl << "File to encrypt: "; // Prompts the user for a filepath.
+   std::string filepath; // Stores the filepath.
+   std::cin >> filepath; // Reads in the filepath.
+   std::string text = readFile(filepath); // Reads in the text from the file.
+   std::cout << "Encrypting file..." << std::endl; // Informs the user that it is encrypting the file.
+   std::string encryptedText = m.encrypt(text); // Encrypts the text from the file.
+   clearFile(filepath); // Clears the file.
+   writeFile(filepath, encryptedText); // Writes the encrypted text into the file.
+   std::cout << "Successful!" << std::endl; // Informs the user that the code ran successfully.
 }
