@@ -13,43 +13,155 @@
 #include "matrix.h"
 
 const int matrix::at(const size_t& x, const size_t& y)
+/**
+Description
+--------
+Returns the data at the specified coordinates.
+
+Input
+----
+const size_t& x -- The x coordinate.
+const size_t& y -- The y coordinate.
+
+Output
+----
+int -- The value at x,y.
+
+*/
 {
-   return data.at(y).at(x); // Returns the data at the specified coordinates.
+   return data.at(y).at(x); // Returns the data at x,y.
 }
 
 const int matrix::getMod()
+/**
+Description
+--------
+Returns the modulo value of the matrix. This value determines the maximum value that can be in the matrix.
+
+Input
+----
+None
+
+Output
+----
+int -- The modulo of the matrix.
+
+*/
 {
    return modulo; // Returns the mod (kinda the base) of the matrix.
 }
 
 const size_t matrix::xSize()
+/**
+Description
+--------
+Returns the number of columns in the matrix.
+
+Input
+----
+None
+
+Output
+----
+size_t -- The number of columns in the matrix.
+
+*/
 {
    return data.at(0).size(); // Returns the x size of the matrix.
 }
 
 const size_t matrix::ySize()
+/**
+Description
+--------
+Returns the number of rows in the matrix.
+
+Input
+----
+None
+
+Output
+----
+size_t -- The number of rows in the matrix.
+
+*/
 {
    return data.size(); // Returns the y size of the matrix.
 }
 
 const void matrix::print() // Prints the matrix.
+/**
+Description
+--------
+Prints the matrix formated nicely.
+
+Input
+----
+None
+
+Output
+----
+None
+
+*/
 {
+   int value; // Used to store the current value.
    for (size_t yIndex = 0; yIndex < ySize(); yIndex++) // Loops through the rows of the matrix.
    {
       for (size_t xIndex = 0; xIndex < xSize(); xIndex++) // Loops through every item in each row.
       {
-         std::cout << at(xIndex, yIndex) << " "; // Prints the item.
+         value = at(xIndex, yIndex); // Stores the current value
+         if (value < 10) // Prints an extra space if value is single digit.
+         {
+            std::cout << " " << value << " ";
+         }
+         else // Prints normaly otherwise.
+         {
+            std::cout << value << " ";
+         }
       }
       std::cout << std::endl; // Starts a new row.
    }
 }
 
 void matrix::addRow(std::vector<int> newRow)
+/**
+Description
+--------
+Adds a new row to the matrix.
+
+Input
+----
+std::vector<int> newRow -- The row being added.
+
+Output
+----
+None
+
+*/
 {
-   data.push_back(newRow); // Adds a new row to the matrix.
+   if (input.size() != xSize()) // If the input vector is not of the appropiate size.
+   {
+      throw std::invalid_argument(" invalid input vector."); // Throws an error informing the user.
+   }
+   data.push_back(newRow); // Adds the new row to the matrix.
 }
 
-const std::vector<int> matrix::multiply(const std::vector<int>& input) // Computes vector matrix multiplication (ie: input * this).
+const std::vector<int> matrix::multiply(const std::vector<int>& input)
+/**
+Description
+--------
+Computes vector matrix multiplication (ie: input * this).
+
+Input
+----
+const std::vector<int>& input -- The vector being multiplied by this matrix.
+
+Output
+----
+std::vector<int> -- The resultant vector.
+
+*/
 {
    if (input.size() != ySize()) // If the input vector is not of the appropiate size.
    {
