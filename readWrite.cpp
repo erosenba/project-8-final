@@ -27,5 +27,5 @@ void writeFile(const std::string& filepath, const std::string& text) // Adds tex
 {
    std::fstream file(filepath); // Creates an fstream with the file at filepath.
    file << text; // Pushes text into the fstream.
-   file.close(); // Closes the file.
+   file.close(); // Closes the file.   
 }
