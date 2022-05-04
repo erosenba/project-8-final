@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Requires the user to input an encryption matrix to decrypt a file.
+ * @file eMatrix.h
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #include <string>
 #include <iostream>
 

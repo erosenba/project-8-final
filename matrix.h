@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Header file for a general matrix class.
+ * @file matrix.h
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #ifndef MATRIX_H
 #define MATRIX_H
 

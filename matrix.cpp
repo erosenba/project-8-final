@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Implementation for a general matrix class.
+ * @file matrix.cpp
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #include <vector>
 #include <iostream>
 #include <exception>

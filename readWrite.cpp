@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Implementation for basic input output tools.
+ * @file eMatrix.h
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #include <fstream>
 
 #include "readWrite.h"

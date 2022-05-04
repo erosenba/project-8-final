@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Header file for a encryption matrix class that extends the matrix class.
+ * @file eMatrix.h
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #ifndef EMATRIX_H
 #define EMATRIX_H
 

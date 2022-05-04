@@ -1,3 +1,11 @@
+/**
+ * CS-102 Project 08: Implementation for a encryption matrix class that extends the matrix class.
+ * @file eMatrix.h
+ * @author: Teddy Rosenbaum
+ * @collaborators: None
+ * @date: 5/3/2022
+ */
+
 #include <iostream>
 #include <cmath>
 #include <vector>
