@@ -15,10 +15,11 @@
 
 int main()
 {
-   std::cout << "Insert encryption key dimensions: "; // Prompts the user to input the dimensions of an encryption matrix.
+   std::cout << "Insert the x size: "; // Prompts the user for the x dimension of the matrix.
    int xSize; // Stores the x size of the matrix.
-   int ySize; // Stores the y size of the matrix.
    std::cin >> xSize; // Reads in the x size of the matrix.
+   std::cout << "Insert the y size: "; // Prompts the user for the y dimension of the matrix.
+   int ySize; // Stores the y size of the matrix.
    std::cin >> ySize; // Reads in the y size of the matrix.
    eMatrix m(xSize, ySize); // Generates a random encryption matrix of the specified size.
    std::cout << "your encryption key is:" << std::endl; // Informs the user that it is printing the encryption matrix.
