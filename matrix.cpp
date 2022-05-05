@@ -140,7 +140,7 @@ None
 
 */
 {
-   if (input.size() != xSize()) // If the input vector is not of the appropiate size.
+   if (newRow.size() != xSize()) // If the input vector is not of the appropiate size.
    {
       throw std::invalid_argument(" invalid input vector."); // Throws an error informing the user.
    }
