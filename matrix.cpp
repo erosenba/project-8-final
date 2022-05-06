@@ -140,10 +140,6 @@ None
 
 */
 {
-   if (newRow.size() != xSize()) // If the input vector is not of the appropiate size.
-   {
-      throw std::invalid_argument(" invalid input vector."); // Throws an error informing the user.
-   }
    data.push_back(newRow); // Adds the new row to the matrix.
 }
 
