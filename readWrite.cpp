@@ -2,7 +2,7 @@
  * CS-102 Project 08: Implementation for basic input output tools.
  * @file eMatrix.h
  * @author: Teddy Rosenbaum
- * @collaborators: None
+ * @collaborators: Used Stack overflow to figure out clearFile.
  * @date: 5/3/2022
  */
 
